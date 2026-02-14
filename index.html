@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Redouane | Data Analyst & IT Infrastructure</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <style>
+            /* OVERRIDES POUR UN LOOK PRO */
+            body, input, select, textarea {
+                font-family: 'Inter', sans-serif !important;
+            }
+            
+            /* --- MODIFICATION DE LA TAILLE ET POSITION DU LOGO (Version v3) --- */
+            #header .logo {
+                width: 9rem;
+                height: 9rem;
+                line-height: 9rem;
+                border: 0;
+                overflow: hidden;
+                border-radius: 50%;
+                background: transparent;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+            
+            #header .logo .icon {
+                display: none;
+            }
+
+            #lang-toggle::before {
+                display: none !important;
+            }
+
+            /* Style de l'image avatar */
+            #header .logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 25%;
+            }
+
+            /* Style pour la grille des logos (Stack) */
+            .stack-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 2em;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .stack-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                padding: 10px;
+                border-radius: 8px;
+                width: 80px;
+                height: 80px;
+                transition: transform 0.2s ease;
+            }
+
+            .stack-item:hover {
+                transform: scale(1.1);
+            }
+
+            .stack-item img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            /* Forcer position relative sur le header */
+            #header {
+                position: relative !important;
+            }
+
+            /* Bouton FR/EN custom */
+            #lang-toggle {
+                position: absolute;
+                bottom: 348px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 9999;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: rgba(10, 10, 10, 0.9);
+                border: 1.5px solid rgba(255, 255, 255, 0.4);
+                color: white;
+                font-size: 0.68em;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s, border-color 0.2s, transform 0.15s;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+                font-family: 'Inter', sans-serif;
+                padding: 0;
+                outline: none;
+            }
+
+            #lang-toggle:hover {
+                background: rgba(255,255,255,0.15);
+                border-color: rgba(255,255,255,0.85);
+                transform: translateX(-50%) scale(1.12);
+            }
+
+            /* Widget Google Translate complètement invisible mais actif */
+            #google_translate_element {
+                position: fixed;
+                top: -9999px;
+                left: -9999px;
+                visibility: hidden;
+            }
+
+            .goog-te-banner-frame,
+            .goog-te-balloon-frame,
+            #goog-gt-tt {
+                display: none !important;
+            }
+
+            body { top: 0 !important; }
+
+            /* Section Coming Soon */
+            .coming-soon {
+                text-align: center;
+                padding: 3rem 0;
+                border: 1px dashed rgba(255,255,255,0.3);
+                border-radius: 8px;
+                background: rgba(0,0,0,0.2);
+            }
+
+            .coming-soon i {
+                font-size: 3rem;
+                color: #ffffff;
+                opacity: 0.7;
+                margin-bottom: 1rem;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <div id="wrapper">
+
+            <header id="header">
+                <div class="logo">
+                    <img src="images/avatar.jpg" alt="Redouane Profile" onerror="this.src='images/bg.jpg'"> 
+                </div>
+                <div class="content">
+                    <div class="inner">
+                        <h1>Redouane</h1>
+                        <p style="font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Data Analyst & IT Infrastructure</p>
+                        <p>Focusing on the Data Lifecycle: From Server to Dashboard.<br />
+                        Bridging the gap between technical complexity and business insights.</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#stack">Stack</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Bouton FR/EN à l'intersection -->
+                <button id="lang-toggle" title="Changer la langue">EN</button>
+
+                <!-- Google Translate invisible mais actif -->
+                <div id="google_translate_element"></div>
+
+            </header>
+
+            <div id="main">
+
+                 <article id="profile">
+                    <h2 class="major">About Me</h2>
+                    <span class="image main" style="background-color: black;"><img src="images/pic01.jpg" alt="Data Analysis Context" style="width: 40%; display: block; margin: auto;" /></span>
+                    
+                    <h3 class="major">Bridging Infrastructure & Intelligence</h3>
+                    <p>
+                        I am transitioning into <strong>data analysis</strong>, a field where I am just getting started with a lot of enthusiasm.<br>
+                        What sets me apart is my background in <strong>IT Infrastructure</strong>, namely my experience as a networks and systems technician, which gives me a different perspective on data.<br>
+                        I don't just analyze it, I also understand where it lives, how it flows, and how to keep it secure.
+                    </p>
+                    <p>
+                        Where many beginner analysts start purely from visualization tools, I start from the ground up, through servers, networks, and architecture. It's a solid foundation that helps me better understand data as a whole, from its source all the way to its use.
+                    </p>
+                    <blockquote>
+                        "I'm still learning how to turn data into clear and actionable narratives for decision-making, and I'm committed to making the most of every opportunity to learn."
+                    </blockquote>
+                </article>
+
+                <article id="stack">
+                    <h2 class="major">My Tech Stack</h2>
+                    
+                    <h3>Data & Analytics</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item" title="Python">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
+                        </div>
+                        <div class="stack-item" title="SQL Server">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" alt="sql server" />
+                        </div>
+                        <div class="stack-item" title="Excel">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" alt="excel" />
+                        </div>
+                        <div class="stack-item" title="Power BI">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="powerbi" />
+                        </div>
+                        <div class="stack-item" title="R Language">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" alt="r" />
+                        </div>
+                        <div class="stack-item" title="Tableau">
+                            <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/tableau-icon.svg" alt="tableau" />
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Infrastructure & DevOps</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item" title="Git">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="git" />
+                        </div>
+                        <div class="stack-item" title="Docker">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="docker" />
+                        </div>
+                        <div class="stack-item" title="VMware">
+                            <img src="https://cdn.simpleicons.org/vmware/0091DA" alt="vmware">
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects">
+                    <h2 class="major">Projects</h2>
+
+                    <h3 style="text-transform: none; font-weight: 600; margin-bottom: 1rem;">NexaStore Analytics - E-commerce Audit</h3>
+                    
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <span class="image" style="width: 150px; flex-shrink: 0; margin: 0;">
+                            <img src="images/nexastore-logo.png" alt="NexaStore Logo" style="width: 100%; border-radius: 8px; border: 1px solid rgba(225, 225, 225, 0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.3);" />
+                        </span>
+                        
+                        <div>
+                            <p style="margin-bottom: 0;">
+This project transforms raw transactional sales data (~51,000 rows) into actionable business insights and auto-generates a fully standalone <strong>HTML Dashboard</strong> using Python and Chart.js.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <ul class="actions">
+                        <li>
+                            <a href="https://github.com/RedouaneHamecha/NexaStoreAnalyctic" target="_blank" class="button">
+                                <i class="icon brands fa-github"></i> View Source
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://redouanehamecha.github.io/NexaStoreAnalyctic/" target="_blank" class="button primary">
+                                Open Dashboard
+                            </a>
+                        </li>
+                    </ul>
+
+                    <hr style="margin: 3rem 0;" />
+
+                    <div class="coming-soon">
+                        <i class="fas fa-server"></i>
+                        <h3>More Projects Coming Soon</h3>
+                        <p>I am currently working on large-scale data infrastructure projects involving <strong>SQL, Apache Spark, HDFS, and Docker</strong>. They will be published here shortly!</p>
+                        
+                        <form method="post" action="mailto:redouane.hamecha00@gmail.com" enctype="text/plain" style="max-width: 400px; margin: 2rem auto 0 auto;">
+                            <p style="font-size: 0.9em; margin-bottom: 1rem; color: #ccc;">Subscribe to my newsletter to get notified when I publish new projects.</p>
+                            <div class="fields">
+                                <div class="field">
+                                    <input type="email" name="newsletter_email" id="newsletter-email" placeholder="Your Email Address" required />
+                                </div>
+                            </div>
+                            <ul class="actions" style="justify-content: center;">
+                                <li><input type="submit" value="Subscribe" class="button primary small" /></li>
+                            </ul>
+                        </form>
+                    </div>
+                </article>
+
+                <article id="contact">
+                    <h2 class="major">Contact</h2>
+                    <p>Let's connect to discuss your data needs or infrastructure challenges.</p>
+                    
+                    <form method="post" action="mailto:redouane.hamecha00@gmail.com" enctype="text/plain">
+                        <div class="fields">
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" required />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" required />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="4" required></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </form>
+                    
+                    <ul class="icons">
+                        <li><a href="https://github.com/RedouaneHamecha" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#2d5f484942584c434803454c40484e454c1d1d6d4a404c4441034e4240" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <footer id="footer">
+                <p class="copyright">&copy; Redouane. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+            </footer>
+
+        </div>
+
+        <div id="bg"></div>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Google Translate (moteur caché) -->
+        <script>
+            // Init Google Translate
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: 'en', includedLanguages: 'en,fr', autoDisplay: false },
+                    'google_translate_element'
+                );
+            }
+
+            // Attendre que le select soit disponible puis traduire
+            function waitForSelect(callback, tries) {
+                tries = tries || 0;
+                const sel = document.querySelector('.goog-te-combo');
+                if (sel) {
+                    callback(sel);
+                } else if (tries < 30) {
+                    setTimeout(function () { waitForSelect(callback, tries + 1); }, 200);
+                }
+            }
+
+            // Changer la langue via le select caché
+            function doTranslate(targetLang) {
+                waitForSelect(function (sel) {
+                    sel.value = targetLang;
+                    sel.dispatchEvent(new Event('change'));
+                });
+            }
+
+            // État courant
+            var currentLang = 'en';
+
+            function toggleLang() {
+                var btn = document.getElementById('lang-toggle');
+                if (currentLang === 'en') {
+                    currentLang = 'fr';
+                    btn.textContent = 'FR';
+                    doTranslate('fr');
+                } else {
+                    currentLang = 'en';
+                    btn.textContent = 'EN';
+                    doTranslate('en');
+                }
+            }
+
+            document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    </body>
+</html>
